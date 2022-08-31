@@ -1,7 +1,5 @@
-import { Environments } from './environments';
-
 export const App = () => {
-  return <div>{Environments.API_KEY}</div>;
+  return <div>App</div>;
 };
 
 export default App;
