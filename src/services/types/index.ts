@@ -1,11 +1,9 @@
 export interface Article {
+  id: number;
   authors: string[];
-  type: string;
+  types: string[];
   title: string;
   description: string;
-  urls: string[];
-}
-
-export interface RequestData {
-  articles: Article[];
+  fulltextIdentifier: string;
+  downloadUrl: string;
 }
