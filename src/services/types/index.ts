@@ -1,9 +1,9 @@
 export interface Article {
-  id: number;
+  id: string;
   authors: string[];
-  types: string[];
+  types: string[] | [];
   title: string;
   description: string;
-  fulltextIdentifier: string;
-  downloadUrl: string;
+  fulltextIdentifier?: string;
+  downloadUrl?: string;
 }

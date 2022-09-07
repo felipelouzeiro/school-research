@@ -7,7 +7,6 @@ export const Container = styled.div`
   flex-direction: column;
   background-color: #ffffff;
   list-style: none;
-  min-height: calc(100vh - 360px);
 `;
 
 export const ArticleContainer = styled.div`
@@ -55,4 +54,10 @@ export const ArticleLinks = styled.div`
     text-decoration: underline;
     color: #d14a38;
   }
+`;
+
+export const FavoriteBtn = styled.span<{ isFavorite: boolean }>`
+  color: ${(props) => (props.isFavorite ? 'blue' : 'black')};
+  font-weight: ${(props) => (props.isFavorite ? 'bold' : 'normal')};
+  cursor: pointer;
 `;

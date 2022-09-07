@@ -1,3 +1,4 @@
+import { useFavorites } from '../../services/hooks/useFavorites';
 import { Article } from '../../services/types';
 import {
   ArticleAuthors,
@@ -7,6 +8,7 @@ import {
   ArticleTitle,
   ArticleTypes,
   Container,
+  FavoriteBtn,
 } from './styles';
 
 interface ListProps {
@@ -14,6 +16,8 @@ interface ListProps {
 }
 
 export const List = ({ articles }: ListProps) => {
+  const { toggleFavoriteArticle, checkedArticles } = useFavorites();
+
   return (
     <Container>
       {articles.map((article) => (
@@ -34,7 +38,12 @@ export const List = ({ articles }: ListProps) => {
                 <a href={article.fulltextIdentifier}>Texto completo</a>
               </span>
             )}
-            <span>Favoritar</span>
+            <FavoriteBtn
+              onClick={(e) => toggleFavoriteArticle(article)}
+              isFavorite={checkedArticles.includes(article)}
+            >
+              Favoritar
+            </FavoriteBtn>
           </ArticleLinks>
         </ArticleContainer>
       ))}

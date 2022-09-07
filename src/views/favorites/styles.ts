@@ -31,3 +31,14 @@ export const SearchBar = styled.form`
     border-radius: 0 5px 5px 0;
   }
 `;
+
+export const EmptyPage = styled.div`
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  color: #aaa;
+`;
