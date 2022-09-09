@@ -15,6 +15,14 @@ interface ListProps {
   articles: Article[];
 }
 
+const stringFormat = (string: string, limit: number) => {
+  if (string.length > limit) {
+    return `${string.substring(0, limit)}...`;
+  }
+
+  return string;
+};
+
 export const List = ({ articles }: ListProps) => {
   const { toggleFavoriteArticle, checkedArticles } = useFavorites();
 
@@ -23,12 +31,15 @@ export const List = ({ articles }: ListProps) => {
       {articles.map((article) => (
         <ArticleContainer key={article.id}>
           <ArticleTitle>{article.title}</ArticleTitle>
-          <ArticleAuthors>{article.authors}</ArticleAuthors>
+          <ArticleAuthors>
+            {stringFormat(article.authors.join(), 185)}
+          </ArticleAuthors>
           <ArticleTypes>{article.types.join(', ')}</ArticleTypes>
-          <ArticleDescription>{`${article.description.substring(
-            0,
-            185
-          )}...`}</ArticleDescription>
+          {article.description && (
+            <ArticleDescription>
+              {stringFormat(article.description, 185)}
+            </ArticleDescription>
+          )}
           <ArticleLinks>
             <span>
               <a href={article.downloadUrl}>Download</a>
