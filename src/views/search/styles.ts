@@ -7,11 +7,6 @@ export const Container = styled.div`
   min-height: calc(100vh - 150px);
 `;
 
-export const PaginationContainer = styled.div`
-  background-color: lightblue;
-  border: 1px solid black;
-`;
-
 export const SearchBar = styled.form`
   padding: 1rem;
   display: grid;
@@ -30,4 +25,10 @@ export const SearchBar = styled.form`
     background-color: blue;
     border-radius: 0 5px 5px 0;
   }
+`;
+
+export const PaginationContainer = styled.div`
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
 `;
