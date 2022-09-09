@@ -47,7 +47,7 @@ export const ArticleLinks = styled.div`
   a {
     text-decoration: none;
     color: blue;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 
   a:hover {
@@ -57,7 +57,9 @@ export const ArticleLinks = styled.div`
 `;
 
 export const FavoriteBtn = styled.span<{ isFavorite: boolean }>`
-  color: ${(props) => (props.isFavorite ? 'blue' : 'black')};
+  svg {
+    color: ${(props) => (props.isFavorite ? 'blue' : 'gray')};
+  }
   font-weight: ${(props) => (props.isFavorite ? 'bold' : 'normal')};
   cursor: pointer;
 `;

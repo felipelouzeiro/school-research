@@ -1,6 +1,11 @@
 import { useFavorites } from '../../services/hooks/useFavorites';
 import { Article } from '../../services/types';
 import {
+  BsBookmarkStarFill,
+  BsDownload,
+  BsFillFileTextFill,
+} from 'react-icons/bs';
+import {
   ArticleAuthors,
   ArticleContainer,
   ArticleDescription,
@@ -37,23 +42,27 @@ export const List = ({ articles }: ListProps) => {
           <ArticleTypes>{article.types.join(', ')}</ArticleTypes>
           {article.description && (
             <ArticleDescription>
-              {stringFormat(article.description, 185)}
+              {stringFormat(article.description, 350)}
             </ArticleDescription>
           )}
           <ArticleLinks>
             <span>
-              <a href={article.downloadUrl}>Download</a>
+              <a href={article.downloadUrl}>
+                <BsDownload color="gray" />
+              </a>
             </span>
             {article.fulltextIdentifier && (
               <span>
-                <a href={article.fulltextIdentifier}>Texto completo</a>
+                <a href={article.fulltextIdentifier}>
+                  <BsFillFileTextFill color="gray" />
+                </a>
               </span>
             )}
             <FavoriteBtn
               onClick={(e) => toggleFavoriteArticle(article)}
               isFavorite={checkedArticles.includes(article)}
             >
-              Favoritar
+              <BsBookmarkStarFill />
             </FavoriteBtn>
           </ArticleLinks>
         </ArticleContainer>
