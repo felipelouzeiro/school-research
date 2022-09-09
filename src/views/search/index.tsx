@@ -48,10 +48,10 @@ export const Search = () => {
   return (
     <Container>
       <SearchBar onSubmit={handleSubmit}>
-        <label htmlFor="text">
+        <label htmlFor="search">
           <input
             type="text"
-            id="text"
+            id="search"
             value={busca}
             onChange={(event) =>
               setSearchParams({ busca: event.target.value, pagina: '1' })

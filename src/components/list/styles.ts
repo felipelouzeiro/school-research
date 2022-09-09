@@ -9,7 +9,7 @@ export const Container = styled.div`
   list-style: none;
 `;
 
-export const ArticleContainer = styled.div`
+export const ArticleContainer = styled.article`
   padding: 1rem;
   display: flex;
   flex-direction: column;

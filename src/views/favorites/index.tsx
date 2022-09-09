@@ -3,6 +3,7 @@ import { Container, EmptyPage, PaginationContainer } from './styles';
 import { useFavorites } from '../../services/hooks/useFavorites';
 import { useEffect, useState } from 'react';
 import { Article } from '../../services/types';
+import { Pagination } from '@mui/material';
 
 export const Favorites = () => {
   const { checkedArticles } = useFavorites();
@@ -20,7 +21,14 @@ export const Favorites = () => {
         <EmptyPage>Nenhum artigo marcado.</EmptyPage>
       )}
       <List articles={favoriteArticles} />
-      <PaginationContainer>pagination</PaginationContainer>
+      {favoriteArticles && favoriteArticles.length >= 9 && (
+        <PaginationContainer>
+          <Pagination
+            page={1}
+            count={Math.ceil(favoriteArticles.length / 10)}
+          />
+        </PaginationContainer>
+      )}{' '}
     </Container>
   );
 };

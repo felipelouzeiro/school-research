@@ -32,7 +32,7 @@ export const Logo = styled.h1`
   }
 `;
 
-export const HeaderLinks = styled.div`
+export const HeaderLinks = styled.nav`
   display: flex;
 
   ul li {
