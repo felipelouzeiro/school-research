@@ -1,38 +1,32 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { Article } from '../types';
 // import { Environments } from '../../environments';
 
-export function useArticles<T = unknown>(pageLimit: number) {
-  const [data, setData] = useState<T | []>([]);
-  const [isFetching, setIsFetching] = useState(true);
+export function useArticles(pageLimit: number) {
+  const [data, setData] = useState<Article[]>([]);
   const [error, setError] = useState<Error | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [totalPages, setTotalPages] = useState(0);
 
-  const fetchData = () => {
-    // const virtualPage =
-    //   (page - 1) * pageLimit <= 0 ? 0 : (page - 1) * pageLimit;
-    setLoading(true);
-    axios
+  const fetchData = async (page: number, queryText = '') => {
+    await axios
       .get(
-        `https://core.ac.uk:443/api-v2/articles/search/banana?page=1&pageSize=10&metadata=true&fulltext=false&citations=false&similar=false&duplicate=false&urls=false&faithfulMetadata=false&apiKey=QRPprmutJwl8OfYFxZaXV9CneGHSI6qk`
+        `https://core.ac.uk:443/api-v2/articles/search/${queryText}?page=${page}&pageSize=${pageLimit}&metadata=true&fulltext=false&citations=false&similar=false&duplicate=false&urls=false&faithfulMetadata=false&apiKey=QRPprmutJwl8OfYFxZaXV9CneGHSI6qk`
       )
       .then((response) => {
         setData(response.data.data);
-        setLoading(false);
+        setTotalPages(response.data.totalHits);
+        console.log('totalHits', response.data.totalHits);
       })
       .catch((err) => {
         setError(err);
-      })
-      .finally(() => {
-        setIsFetching(false);
       });
   };
 
   return {
     fetchData,
     data,
-    isFetching,
     error,
-    loading,
+    totalPages,
   };
 }
