@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  border: 1px solid black;
-
   position: sticky;
   top: 0;
   min-height: 80px;
@@ -11,15 +9,26 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 `;
 
 export const Logo = styled.h1`
   text-transform: capitalize;
   padding-left: 40px;
+  cursor: pointer;
 
   a {
     text-decoration: none;
     color: #767676;
+  }
+
+  img {
+    width: 2.5rem;
+    height: 80%;
+    transition: opacity 0.5s ease;
+    :hover {
+      opacity: 0.7;
+    }
   }
 `;
 
