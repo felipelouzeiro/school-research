@@ -16,7 +16,6 @@ export function useArticles(pageLimit: number) {
       .then((response) => {
         setData(response.data.data);
         setTotalPages(response.data.totalHits);
-        console.log('totalHits', response.data.totalHits);
       })
       .catch((err) => {
         setError(err);

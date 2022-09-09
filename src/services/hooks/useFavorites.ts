@@ -17,14 +17,12 @@ export function useFavorites() {
   }, [checkedArticles]);
 
   const checkArticles = (article: Article) => {
-    console.log('adicionou', article.id);
     let updateListCheckedArticles = [...checkedArticles, article];
 
     setCheckedArticles(updateListCheckedArticles);
   };
 
   const uncheckArticles = (article: Article) => {
-    console.log('removeu', article.id);
     let updateListCheckedArticles = checkedArticles.filter(
       (item: Article) => item['id'] !== article['id']
     );
@@ -36,7 +34,6 @@ export function useFavorites() {
     let articleExists = checkedArticles.some(
       (item: Article) => item['id'] === article['id']
     );
-    console.log('event', articleExists);
 
     if (articleExists) {
       uncheckArticles(article);
