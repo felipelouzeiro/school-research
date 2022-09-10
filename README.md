@@ -18,7 +18,7 @@ Esse projeto é uma página de busca.
 
 O projeto foi útil para treinar typescript com react, principalmente sobre paginação de requisições vinculadas as rotas do cliente.
 
-### Para testar a aplicação
+### Para rodar a aplicação
 
 #### _Tenha:_
 
@@ -31,6 +31,12 @@ O projeto foi útil para treinar typescript com react, principalmente sobre pagi
     2. Entre no diretório dp projeto e instale as dependências com o comando ex: `npm install` ou com o comando similar do seu gerenciador de pacotes.
 
     3. Execute o script start para iniciar a aplicação: ex: `npm start` ou com o comando similar do seu gerenciador de pacotes.
+
+### Testes _Cypres_
+
+#### Para testar a aplicação:
+
+    1. Execute o script de test com `npm run test:run`, ou com o comando similar do seu gerenciador de pacotes.
 
 Confira o deploy da aplicação [ aqui ](https://school-research.vercel.app/).
 
