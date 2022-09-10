@@ -29,9 +29,11 @@ O projeto foi útil para treinar typescript com react, principalmente sobre pagi
 
     1. Clone a aplicação.
 
-    2. Entre no diretório dp projeto e instale as dependências com o comando ex: `npm install` ou com o comando similar do seu gerenciador de pacotes.
+    2. Entre no diretório do projeto e instale as dependências com o comando ex: `npm install` ou com o comando similar do seu gerenciador de pacotes.
 
-    3. Execute o script start para iniciar a aplicação: ex: `npm start` ou com o comando similar do seu gerenciador de pacotes.
+    3. Altere o nome do arquivo `.env.example` para `.env.local` e insira a sua chave do banco no campo `REACT_APP_APIKEY=`
+
+    4. Execute o script start para iniciar a aplicação: ex: `npm start` ou com o comando similar do seu gerenciador de pacotes.
 
 ### Testes _Cypres_
 
