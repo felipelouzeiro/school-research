@@ -62,3 +62,31 @@ describe('Testa comportamento da página de pesquisa ', () => {
     cy.get('#article').should('exist');
   });
 });
+
+describe('Testa comportamento dos botões do artigo ', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/search');
+  });
+
+  it('Testa botão para adicionar artigos aos favoritos', () => {
+    cy.get('#search-input').type('Tripanossomíase americana');
+    cy.get('#search-button').click();
+
+    // clicando no botão para favoritar um artigo
+    cy.get('#favorite-toggle-button').click();
+    // verificando se o artigo foi adicionado a pagina de favoritos
+    cy.visit('http://localhost:3000/favorites');
+    cy.get('#article').should('exist');
+  });
+
+  it('Testa botão para remover artigo dos favoritos', () => {
+    cy.get('#search-input').type('Tripanossomíase americana');
+    cy.get('#search-button').click();
+
+    // clicando no botão para remover um artigo
+    cy.get('#favorite-toggle-button').click();
+    // verificando se o artigo foi removido a pagina de favoritos
+    cy.visit('http://localhost:3000/favorites');
+    cy.get('#article').should('not.exist');
+  });
+});
