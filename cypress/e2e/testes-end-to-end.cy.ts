@@ -46,3 +46,19 @@ describe('Testa links da Header ', () => {
     cy.url().should('includes', 'search');
   });
 });
+
+describe('Testa comportamento da página de pesquisa ', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/search');
+  });
+
+  it('Testa se a lista de artigos se inicia vazia', () => {
+    cy.contains('#article').should('not.exist');
+  });
+
+  it('Testa se os resultados são renderizados ao executar uma pesquisa', () => {
+    cy.get('#search-input').type('Tripanossomíase americana');
+    cy.get('#search-button').click();
+    cy.get('#article').should('exist');
+  });
+});
