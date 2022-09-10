@@ -47,13 +47,17 @@ export const List = ({ articles }: ListProps) => {
           )}
           <ArticleLinks>
             <span>
-              <a href={article.downloadUrl}>
+              <a href={article.downloadUrl} target="_blank" rel="noreferrer">
                 <BsDownload color="gray" />
               </a>
             </span>
             {article.fulltextIdentifier && (
               <span>
-                <a href={article.fulltextIdentifier}>
+                <a
+                  href={article.fulltextIdentifier}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <BsFillFileTextFill color="gray" />
                 </a>
               </span>
