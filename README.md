@@ -35,9 +35,13 @@ O projeto foi útil para treinar typescript com react, principalmente sobre pagi
 
 ### Testes _Cypres_
 
+#### _Tenha:_
+
+    - Certifique-se de que a aplicação está rodando em seu navegador.
+
 #### Para testar a aplicação:
 
-    1. Execute o script de test com `npm run test:run`, ou com o comando similar do seu gerenciador de pacotes.
+    1. Execute o script de test com `npm run test`, ou com o comando similar do seu gerenciador de pacotes.
 
 Confira o deploy da aplicação [ aqui ](https://school-research.vercel.app/).
 
