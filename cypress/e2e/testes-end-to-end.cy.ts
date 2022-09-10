@@ -30,3 +30,19 @@ describe('Testa renderização dos componentes primários', () => {
     );
   });
 });
+
+describe('Testa links da Header ', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/');
+  });
+
+  it('Testa se a pagina "favorites" é renderizada ao clicar em "Favoritos"', () => {
+    cy.get('#page-link-favorites').click();
+    cy.url().should('includes', 'favorites');
+  });
+
+  it('Testa se a pagina "search" é renderizada ao clicar em "Artigos"', () => {
+    cy.get('#page-link-articles').click();
+    cy.url().should('includes', 'search');
+  });
+});
