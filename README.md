@@ -9,6 +9,7 @@ Esse projeto é uma página de busca.
 - React com Typescript;
 - Styled Components;
 - Axios
+- Cypress
 
 ### _Sobre_
 
