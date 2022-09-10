@@ -48,10 +48,10 @@ export const Search = () => {
   return (
     <Container>
       <SearchBar onSubmit={handleSubmit}>
-        <label htmlFor="search">
+        <label htmlFor="search-input">
           <input
             type="text"
-            id="search"
+            id="search-input"
             value={busca}
             onChange={(event) =>
               setSearchParams({ busca: event.target.value, pagina: '1' })
@@ -60,7 +60,9 @@ export const Search = () => {
             required
           />
         </label>
-        <button type="submit">buscar</button>
+        <button id="search-button" type="submit">
+          buscar
+        </button>
       </SearchBar>
 
       {isLoading && <Loading />}
@@ -69,6 +71,7 @@ export const Search = () => {
       {totalPages > 0 && data.length >= 9 && !isLoading && (
         <PaginationContainer>
           <Pagination
+            id="search-pagination"
             page={pagina}
             count={Math.ceil(totalCountRows / 10)}
             onChange={(e, newPage) =>

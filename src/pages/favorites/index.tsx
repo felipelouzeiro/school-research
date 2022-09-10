@@ -18,7 +18,9 @@ export const Favorites = () => {
   return (
     <Container>
       {favoriteArticles.length < 1 && (
-        <EmptyPage>Nenhum artigo marcado.</EmptyPage>
+        <EmptyPage id="favorite-empty-message">
+          Nenhum artigo marcado.
+        </EmptyPage>
       )}
       <List articles={favoriteArticles} />
       {favoriteArticles && favoriteArticles.length >= 9 && (
@@ -28,7 +30,7 @@ export const Favorites = () => {
             count={Math.ceil(favoriteArticles.length / 10)}
           />
         </PaginationContainer>
-      )}{' '}
+      )}
     </Container>
   );
 };

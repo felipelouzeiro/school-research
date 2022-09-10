@@ -34,7 +34,7 @@ export const List = ({ articles }: ListProps) => {
   return (
     <Container>
       {articles.map((article) => (
-        <ArticleContainer key={article.id}>
+        <ArticleContainer key={article.id} id="article">
           <ArticleTitle>{article.title}</ArticleTitle>
           <ArticleAuthors>
             {stringFormat(article.authors.join(), 185)}
@@ -59,6 +59,7 @@ export const List = ({ articles }: ListProps) => {
               </span>
             )}
             <FavoriteBtn
+              id="favorite-toggle-button"
               onClick={(e) => toggleFavoriteArticle(article)}
               isFavorite={checkedArticles.includes(article)}
             >

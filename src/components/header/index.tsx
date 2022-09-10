@@ -8,16 +8,22 @@ export const Header = () => {
       <div>
         <Logo>
           <img src={icon} alt="" />
-          <Link to="/">school research</Link>
+          <Link to="/" id="page-title">
+            school research
+          </Link>
         </Logo>
       </div>
       <HeaderLinks>
         <ul>
           <li>
-            <Link to="/search">artigos</Link>
+            <Link to="/search" id="page-link-articles">
+              artigos
+            </Link>
           </li>
           <li>
-            <Link to="/favorites">favoritos</Link>
+            <Link to="/favorites" id="page-link-favorites">
+              favoritos
+            </Link>
           </li>
         </ul>
       </HeaderLinks>

@@ -1,8 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './components/header';
-import { Search } from './views/search';
+import { Search } from './pages/search';
 import { Footer } from './components/footer';
-import { Favorites } from './views/favorites';
+import { Favorites } from './pages/favorites';
 
 export const App = () => {
   return (
